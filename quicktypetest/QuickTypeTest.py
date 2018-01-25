@@ -1,25 +1,14 @@
-# To parse this JSON data, 'import json' then do:
+# To parse this JSON data, add a new class to your project named "QuickType" then:
 #
-#     using QuickType;
+#     from QuickType import data
 #
 #     var data = Pokedex.FromJson(jsonString);
-
 import json
+from QuickType import test
 
 p = json.loads(open('resources/pokedex.json').read())
 
-from PokeDex import f
+print(test("", p))
 
-print(f('') + "wee")
 
-#
-# class User(object):
-#     def __init__(self, name, username):
-#         self.name = name
-#         self.username = username
-#
-# j = json.loads(json_string)
-# u = User(**j)
-#
-# print "Object: " + u.name
 
