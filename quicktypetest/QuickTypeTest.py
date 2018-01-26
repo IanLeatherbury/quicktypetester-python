@@ -8,7 +8,9 @@ from QuickType import test
 
 p = json.loads(open('resources/pokedex.json').read())
 
-print(test("", p))
+data = test("", p)
+
+print(data.pokedex[0])
 
 
 

@@ -6,7 +6,6 @@ class Pokedex(object):
 
 def test(self, p):
     pokemon = Pokedex(**p)
-    print("Pokemon list: ")
-    print(pokemon.pokedex)
+    return pokemon
 
 
