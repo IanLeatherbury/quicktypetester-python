@@ -1,11 +1,8 @@
-
-class Pokedex(object):
+class PokeDex(object):
     def __init__(self, pokemon):
         self.pokedex = pokemon
 
 
-def test(self, p):
-    pokemon = Pokedex(**p)
+def from_json(p):
+    pokemon = PokeDex(**p)
     return pokemon
-
-

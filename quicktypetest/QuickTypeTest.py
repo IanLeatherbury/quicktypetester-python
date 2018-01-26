@@ -1,16 +1,14 @@
 # To parse this JSON data, add a new class to your project named "QuickType" then:
 #
-#     from QuickType import data
+#     from QuickType import from_json
 #
-#     var data = Pokedex.FromJson(jsonString);
+#     data = from_json(json_string)
+
 import json
-from QuickType import test
+from QuickType import from_json
 
 p = json.loads(open('resources/pokedex.json').read())
 
-data = test("", p)
+data = from_json(p)
 
 print(data.pokedex[0])
-
-
-
