@@ -7,7 +7,7 @@
 import json
 from QuickType import pokedex_from_json
 
-p = json.loads(open('resources/pokedex.json').read())
+p = json.loads(open('pokedex.json').read())
 
 dex = pokedex_from_json(p)
 
