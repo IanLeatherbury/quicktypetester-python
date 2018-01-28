@@ -5,10 +5,15 @@
 #     data = from_json(json_string)
 
 import json
-from QuickType import from_json
+from QuickType import pokedex_from_json
 
 p = json.loads(open('resources/pokedex.json').read())
 
-data = from_json(p)
+dex = pokedex_from_json(p)
 
-print(data.pokedex[0])
+print "dex: "
+print(dex.pokedex[0])
+
+
+
+
