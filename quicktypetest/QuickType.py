@@ -19,7 +19,7 @@ def someFunc(myList = []):
         print x
 
 
-someFunc(pokedex_from_json(p).pokedex)
+# someFunc(pokedex_from_json(p).pokedex)
 
 
 class Pokemon(object):
@@ -64,6 +64,7 @@ def pokemon_from_json(p):
     return pokemon
 
 
-t = pokemon_from_json(pokedex_from_json(p).pokedex[10])
+# t = pokemon_from_json(pokedex_from_json(p['pokemon'][0]))
 
-print(t.avg_spawns)
+print(p['pokemon'][0])
+

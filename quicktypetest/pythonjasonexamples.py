@@ -7,6 +7,13 @@ parsed_json = json.loads(json_string)
 
 print(parsed_json['first_name'])
 
+
+
+
+
+
+
+
 ######## Json parsing example 2 ########
 d = {
     'first_name': 'Ian',
