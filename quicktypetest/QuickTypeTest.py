@@ -6,13 +6,18 @@
 
 import json
 from QuickType import pokedex_from_json
+from QuickType import pokemon_from_json
 
-p = json.loads(open('pokedex.json').read())
+p = json.loads(open('resources/pokedex.json').read())
 
 dex = pokedex_from_json(p)
+mon = pokemon_from_json(p)
 
 print "dex: "
 print(dex.pokedex[0])
+
+print(type(mon.name))
+print(mon.name[0])
 
 
 

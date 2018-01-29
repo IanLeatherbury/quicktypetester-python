@@ -12,8 +12,6 @@ print(parsed_json['first_name'])
 
 
 
-
-
 ######## Json parsing example 2 ########
 d = {
     'first_name': 'Ian',
