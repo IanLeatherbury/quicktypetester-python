@@ -7,12 +7,12 @@
 import json
 from QuickType import pokedex_from_json
 
-p = json.loads(open('resources/pokedex.json').read())
+p = json.loads(open('resources/pokedex.json', encoding='latin1').read())
 
-dex = pokedex_from_json(p)[0].name
+dex = pokedex_from_json(p)[0].avg_spawns
 
 print(dex)
-print(type(dex[0]))
+print(type(dex))
 
 
 

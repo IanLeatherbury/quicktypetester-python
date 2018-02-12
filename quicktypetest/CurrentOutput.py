@@ -1,9 +1,31 @@
-class Pokedex(object):
-    def __init__(self):
-        self.pokemon = pokemon
+class Evolution(object):
+    def __init__(self,
+            num: str,
+            name: str,
+        ):
+        self.num = num
+        self.name = name
 
 class Pokemon(object):
-    def __init__(self):
+    def __init__(self,
+            id: int,
+            num: str,
+            name: str,
+            img: str,
+            type: list<str>,
+            height: str,
+            weight: str,
+            candy: str,
+            candyCount: int,
+            egg: Egg,
+            spawnChance: float,
+            avgSpawns: float,
+            spawnTime: str,
+            multipliers: Maybe<list<float>>,
+            weaknesses: list<Weakness>,
+            nextEvolution: list<Evolution>,
+            prevEvolution: list<Evolution>,
+        ):
         self.id = id
         self.num = num
         self.name = name
@@ -22,11 +44,9 @@ class Pokemon(object):
         self.nextEvolution = nextEvolution
         self.prevEvolution = prevEvolution
 
-class Evolution(object):
-    def __init__(self)
-        self.num = num
-        self.name = name
+class Pokedex(object):
+    def __init__(self,
+            pokemon: list<Pokemon>,
+        ):
+        self.pokemon = pokemon
 
-enum Egg = NotInEggs | OmanyteCandy | The10KM | The2KM | The5KM
-
-enum Weakness = Bug | Dark | Dragon | Electric | Fairy | Fighting | Fire | Flying | Ghost | Grass | Ground | Ice | Poison | Psychic | Rock | Steel | Water

@@ -3,49 +3,59 @@ import json
 
 # p = json.loads(open('pokedex.json').read())
 
-class Pokedex(object):
-    def __init__(self, pokemon):
-        self.pokemon = pokemon
-
+class Evolution(object):
+    def __init__(self,
+            num: str,
+            name: str,
+        ):
+        self.num = num
+        self.name = name
 
 class Pokemon(object):
     def __init__(self,
-                 prev_evolution="value",
-                 name="",
-                 img="value",
-                 spawn_chance="value",
-                 egg="value",
-                 weaknesses="value",
-                 weight="value",
-                 height="value",
-                 candy_count="value",
-                 avg_spawns="value",
-                 num="value",
-                 candy="value",
-                 spawn_time="value",
-                 next_evolution="value",
-                 multipliers="value",
-                 type="value",
-                 id="value"):
-        self.prev_evolution = prev_evolution
+            id: int,
+            num: str,
+            name: str,
+            img: str,
+            type: list<str>,
+            height: str,
+            weight: str,
+            candy: str,
+            candyCount: int,
+            egg: Egg,
+            spawnChance: float,
+            avgSpawns: float,
+            spawnTime: str,
+            multipliers: Maybe<list<float>>,
+            weaknesses: list<Weakness>,
+            nextEvolution: list<Evolution>,
+            prevEvolution: list<Evolution>,
+        ):
+        self.id = id
+        self.num = num
         self.name = name
         self.img = img
-        self.spawn_chance = spawn_chance
-        self.egg = egg
-        self.weaknesses = weaknesses
-        self.weight = weight
-        self.height = height
-        self.candy_count = candy_count
-        self.avg_spawns = avg_spawns
-        self.num = num
-        self.candy = candy
-        self.spawn_time = spawn_time
-        self.next_evolution = next_evolution
-        self.multipliers = multipliers
         self.type = type
-        self.id = id
+        self.height = height
+        self.weight = weight
+        self.candy = candy
+        self.candyCount = candyCount
+        self.egg = egg
+        self.spawnChance = spawnChance
+        self.avgSpawns = avgSpawns
+        self.spawnTime = spawnTime
+        self.multipliers = multipliers
+        self.weaknesses = weaknesses
+        self.nextEvolution = nextEvolution
+        self.prevEvolution = prevEvolution
 
+class Pokedex(object):
+    def __init__(self,
+            pokemon: list<Pokemon>,
+        ):
+        self.pokemon = pokemon
 
+# Need to emit proper class: Pokedex.Pokemon[0].name
 def pokedex_from_json(p):
     return [Pokemon(**x) for x in p['pokemon']]
 
