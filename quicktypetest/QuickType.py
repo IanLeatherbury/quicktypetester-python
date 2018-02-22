@@ -17,7 +17,7 @@ class Pokemon(object):
             num: str,
             name: str,
             img: str,
-            type: list<str>,
+            type: list[str],
             height: str,
             weight: str,
             candy: str,
@@ -26,10 +26,10 @@ class Pokemon(object):
             spawnChance: float,
             avgSpawns: float,
             spawnTime: str,
-            multipliers: Maybe<list<float>>,
-            weaknesses: list<Weakness>,
-            nextEvolution: list<Evolution>,
-            prevEvolution: list<Evolution>,
+            multipliers: Maybe[list[float]],
+            weaknesses: list[Weakness],
+            nextEvolution: list[Evolution],
+            prevEvolution: list[Evolution],
         ):
         self.id = id
         self.num = num
@@ -51,12 +51,14 @@ class Pokemon(object):
 
 class Pokedex(object):
     def __init__(self,
-            pokemon: list<Pokemon>,
+            pokemon: list[Pokemon],
         ):
         self.pokemon = pokemon
 
+
+
 # Need to emit proper class: Pokedex.Pokemon[0].name
-def pokedex_from_json(p):
+def from_json(p):
     return [Pokemon(**x) for x in p['pokemon']]
 
 
